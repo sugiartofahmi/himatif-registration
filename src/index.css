@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face{
+    font-family: "Fredoka One";
+    src: url("/src/fonts/FredokaOne-Regular.ttf");
+}
