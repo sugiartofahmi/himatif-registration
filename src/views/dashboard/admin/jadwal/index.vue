@@ -101,7 +101,7 @@
 <script setup>
 import { supabase } from "../../../../supabase";
 import { ref, onMounted } from "vue";
-import Modal from "../../../../components/Modal/index.vue";
+
 import Swal from "sweetalert2";
 
 const wawancara = ref({});
