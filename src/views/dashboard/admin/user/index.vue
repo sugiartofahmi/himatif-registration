@@ -9,7 +9,7 @@
       cancel-text="Batal"
       submit-text="Simpan"
     >
-      <form @submit.prevent="updateData(idUSer)" class="w-full mr-40">
+      <form @submit.prevent="updateData(idUser)" class="w-full mr-40">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
@@ -38,7 +38,7 @@
               v-model="nim"
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="phoneNumber"
-              type="number"
+              type="text"
             />
           </div>
         </div>
@@ -54,7 +54,7 @@
               v-model="password"
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="phoneNumber"
-              type="number"
+              type="text"
             />
           </div>
         </div>
@@ -187,6 +187,7 @@ const updateData = async (id) => {
 
 const edit = async (id) => {
   const { data } = await supabase.from("user").select("*").eq("id", id);
+  idUser.value = data[0].id;
   nama.value = data[0].nama;
   nim.value = data[0].nim;
   password.value = data[0].password;
