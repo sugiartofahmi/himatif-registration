@@ -35,9 +35,8 @@
                         <input
                           v-model="signUp.jenisKelamin"
                           class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
-                          id="email"
-                          type="email"
-                          placeholder="Masukkan Email Anda"
+                          type="text"
+                          placeholder="Masukan Jenis Kelamin"
                         />
                       </div>
                     </div>
@@ -47,9 +46,8 @@
                         <input
                           v-model="signUp.kelas"
                           class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
-                          id="fullName"
                           type="text"
-                          placeholder="Masukkan Nama Anda"
+                          placeholder="Masukkan Kelas"
                         />
                       </div>
                       <div class="w-1/2 px-3">
@@ -57,9 +55,8 @@
                         <input
                           v-model="signUp.nim"
                           class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
-                          id="email"
-                          type="email"
-                          placeholder="Masukkan Email Anda"
+                          type="number"
+                          placeholder="Masukkan NIM"
                         />
                       </div>
                     </div>
@@ -71,9 +68,8 @@
                         <input
                           v-model="signUp.password"
                           class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
-                          id="fullName"
-                          type="text"
-                          placeholder="Masukkan Nama Anda"
+                          type="password"
+                          placeholder="Masukkan Password"
                         />
                       </div>
                       <div class="w-1/2 px-3">
@@ -81,9 +77,8 @@
                         <input
                           v-model="signUp.validPassword"
                           class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
-                          id="email"
-                          type="email"
-                          placeholder="Masukkan Email Anda"
+                          type="password"
+                          placeholder="Masukkan Password"
                         />
                       </div>
                     </div>
@@ -95,9 +90,8 @@
                         <input
                           v-model="signUp.divisi"
                           class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
-                          id="fullName"
                           type="text"
-                          placeholder="Masukkan Nama Anda"
+                          placeholder="Masukkan Nama Divisi"
                         />
                       </div>
                       <div class="w-1/2 px-3">
@@ -106,10 +100,9 @@
                         </label>
                         <textarea
                           v-model="signUp.alasan"
-                          class="form-control block w-full px-3 py-1.5 text-base font-normal text-white bg-transparent bg-clip-padding border border-solid border-white rounded m-0 focus:bg-white focus:outline-none focus:text-[#2D31FA]"
-                          id="exampleFormControlTextarea1"
+                          class="mt-1 focus:outline-none rounded border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
                           rows="3"
-                          placeholder="Your message"
+                          placeholder="Masukan Alasan"
                         ></textarea>
                       </div>
                     </div>
@@ -137,7 +130,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { supabase } from "../../supabase";
 import Swal from "sweetalert2";
 import { reactive } from "vue";
@@ -177,9 +170,10 @@ const submitData = async () => {
       },
     ]);
     clearForm();
+    router.push("/login");
     if (error) throw error;
     Swal.fire("Terimakasih", "Terimakasih atas Partisipasi nya", "success");
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
