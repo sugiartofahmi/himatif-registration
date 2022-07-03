@@ -7,6 +7,7 @@
       @submit="updateData(idUser)"
       title="Updata Data"
       cancel-text="Batal"
+      submit-text="Simpan"
     >
       <form @submit.prevent="updateData(idUser)" class="w-full mr-40">
         <div class="flex flex-wrap -mx-3 mb-6">
