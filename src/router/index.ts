@@ -7,7 +7,7 @@ import Signup from "../views/signup/index.vue";
 import Login from "../views/login/index.vue";
 import User from "../views/dashboard/admin/user/index.vue";
 import Pendaftar from "../views/dashboard/admin/pendaftar/index.vue";
-import Jadwal from "../views/dashboard/admin/Jadwal/index.vue";
+import Jadwal from "../views/dashboard/admin/jadwal/index.vue";
 import DataDiri from "../views/dashboard/user/dataDiri/index.vue";
 import Seleksi from "../views/dashboard/user/seleksi/index.vue";
 
