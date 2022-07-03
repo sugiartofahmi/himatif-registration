@@ -50,7 +50,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 import { useRoute } from "vue-router";
 import { supabase } from "../../../supabase";
 import { ref, onMounted } from "vue";
