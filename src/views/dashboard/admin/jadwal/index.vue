@@ -98,7 +98,7 @@
     <!--end Content -->
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 import { supabase } from "../../../../supabase";
 import { ref, onMounted } from "vue";
 import Modal from "../../../../components/Modal/index.vue";
