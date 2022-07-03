@@ -28,7 +28,7 @@
         <img
           class="object-cover object-center rounded"
           alt="logo himatif"
-          src="../../assets/logo-himatif.png"
+          src="../../assets/Logo-himatif.png"
         />
       </div>
     </div>
