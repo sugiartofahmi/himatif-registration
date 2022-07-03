@@ -61,7 +61,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { supabase } from "../../supabase";
 import { router } from "../../router";
 import Swal from "sweetalert2";
@@ -84,13 +84,13 @@ const submit = async () => {
     console.log(users.value[0].role);
     if (users.value[0].role !== "user") {
       router.push("/admin/user");
-    } else if (users.value[0].role === "user") {
+    } else if (users.value[0]?.role === "user") {
       router.push("/user/dataDiri/" + users.value[0].id);
     } else {
       Swal.fire("Pemberitahuan", "Data Tidak Ditemukan", "warning");
     }
     if (error) throw error;
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
