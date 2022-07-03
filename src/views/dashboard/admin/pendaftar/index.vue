@@ -1,15 +1,15 @@
 <template>
-  <div class="flex bg-[#051367]" v-for="(user, index) in users" :key="users.id">
+  <div class="flex bg-[#051367]">
     <SidebarAdmin />
     <Modal
       v-if="isModalShow"
       @cancel="closeModal"
-      @submit="updateData(user.id)"
+      @submit="updateData(idUser)"
       title="Updata Data"
       cancel-text="Batal"
       submit-text="Simpan"
     >
-      <form @submit.prevent="updateData(user.id)" class="w-full mr-40">
+      <form @submit.prevent="updateData(idUser)" class="w-full mr-40">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
@@ -144,9 +144,9 @@
               </tr>
             </thead>
             <tbody
-              class="text-black bg-white"
               v-for="(user, index) in users"
               :key="users.id"
+              class="text-black bg-white"
             >
               <tr class="bg-white border-b dark:border-gray-700">
                 <td class="px-6 py-4">{{ index + 1 }}</td>
@@ -180,7 +180,7 @@
     <!--end Content -->
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 import { supabase } from "../../../../supabase";
 import { ref, onMounted } from "vue";
 import Modal from "../../../../components/Modal/index.vue";
@@ -198,6 +198,7 @@ const closeModal = () => {
 
 //clear form
 const clearForm = () => {
+  idUser.value = "";
   nama.value = "";
   nim.value = "";
   jenisKelamin.value = "";
@@ -210,11 +211,15 @@ const clearForm = () => {
 //get all user
 const users = ref({});
 const getUsers = async () => {
-  const { data, error } = await supabase.from("user").select("*");
+  const { data, error } = await supabase
+    .from("user")
+    .select("*")
+    .eq("role", "user");
   users.value = data;
 };
 
-//get user by id
+//define
+const idUser = ref("");
 const nama = ref("");
 const nim = ref("");
 const jenisKelamin = ref("");
@@ -222,20 +227,9 @@ const kelas = ref("");
 const divisi = ref("");
 const alasan = ref("");
 const status = ref("");
-const getUserById = async (id: number) => {
-  clearForm();
-  const { data } = await supabase.from("user").select("*").eq("id", id);
-  nama.value = data[0].nama;
-  nim.value = data[0].nim;
-  jenisKelamin.value = data[0].jenisKelamin;
-  kelas.value = data[0].kelas;
-  divisi.value = data[0].divisi;
-  alasan.value = data[0].alasan;
-  status.value = data[0].status;
-};
 
 //update user
-const updateData = async (id: number) => {
+const updateData = async (id) => {
   try {
     const data = {
       nama: nama.value,
@@ -252,14 +246,14 @@ const updateData = async (id: number) => {
     clearForm();
     closeModal();
     getUsers();
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
 };
 
 //delete user
-const deleteUsers = async (id: number) => {
+const deleteUsers = async (id) => {
   try {
     Swal.fire({
       title: "Are you sure?",
@@ -277,14 +271,23 @@ const deleteUsers = async (id: number) => {
         if (error) throw error;
       }
     });
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
 };
 
-const edit = async (id: number) => {
-  getUserById(id);
+//edit user
+const edit = async (id) => {
+  const { data } = await supabase.from("user").select("*").eq("id", id);
+  idUser.value = data[0].id;
+  nama.value = data[0].nama;
+  nim.value = data[0].nim;
+  jenisKelamin.value = data[0].jenisKelamin;
+  kelas.value = data[0].kelas;
+  divisi.value = data[0].divisi;
+  alasan.value = data[0].alasan;
+  status.value = data[0].status;
   showModal();
 };
 

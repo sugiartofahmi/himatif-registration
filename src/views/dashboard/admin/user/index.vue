@@ -1,15 +1,15 @@
 <template>
-  <div class="flex bg-[#051367]" v-for="(user, index) in users" :key="users.id">
+  <div class="flex bg-[#051367]">
     <SidebarAdmin />
     <Modal
       v-if="isModalShow"
       @cancel="closeModal"
-      @submit="updateData(user.id)"
+      @submit="updateData(idUser)"
       title="Updata Data"
       cancel-text="Batal"
       submit-text="Simpan"
     >
-      <form @submit.prevent="updateData(user.id)" class="w-full mr-40">
+      <form @submit.prevent="updateData(idUSer)" class="w-full mr-40">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
@@ -126,12 +126,37 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { supabase } from "../../../../supabase";
 import { ref, onMounted } from "vue";
 import Swal from "sweetalert2";
 import Modal from "../../../../components/Modal/index.vue";
 
+//show modal
+const isModalShow = ref(false);
+const showModal = () => {
+  isModalShow.value = true;
+};
+const closeModal = () => {
+  clearForm();
+  isModalShow.value = false;
+};
+
+//define
+const idUser = ref("");
+const nama = ref("");
+const nim = ref("");
+const password = ref("");
+const role = ref("");
+
+//clear form
+const clearForm = () => {
+  idUser.value = "";
+  nama.value = "";
+  nim.value = "";
+  password.value = "";
+  role.value = "";
+};
 //get all user
 const users = ref({});
 const getUsers = async () => {
@@ -139,30 +164,8 @@ const getUsers = async () => {
   users.value = data;
 };
 
-//get user by id
-const nama = ref("");
-const nim = ref("");
-const password = ref("");
-const role = ref("");
-
-const getUserById = async (id: number) => {
-  const { data } = await supabase.from("user").select("*").eq("id", id);
-  nama.value = data[0].nama;
-  nim.value = data[0].nim;
-  password.value = data[0].password;
-  role.value = data[0].role;
-};
-
-//clear form
-const clearForm = () => {
-  nama.value = "";
-  nim.value = "";
-  password.value = "";
-  role.value = "";
-};
-
 // update user
-const updateData = async (id: number) => {
+const updateData = async (id) => {
   try {
     const data = {
       nama: nama.value,
@@ -176,14 +179,18 @@ const updateData = async (id: number) => {
     clearForm();
     closeModal();
     getUsers();
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
 };
 
-const edit = async (id: number) => {
-  getUserById(id);
+const edit = async (id) => {
+  const { data } = await supabase.from("user").select("*").eq("id", id);
+  nama.value = data[0].nama;
+  nim.value = data[0].nim;
+  password.value = data[0].password;
+  role.value = data[0].role;
   showModal();
 };
 
@@ -192,7 +199,7 @@ onMounted(() => {
 });
 
 //delete user
-const deleteUsers = async (id: number) => {
+const deleteUsers = async (id) => {
   try {
     Swal.fire({
       title: "Are you sure?",
@@ -210,19 +217,9 @@ const deleteUsers = async (id: number) => {
         if (error) throw error;
       }
     });
-  } catch (error: any) {
+  } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
-};
-
-//show modal
-const isModalShow = ref(false);
-const showModal = () => {
-  isModalShow.value = true;
-};
-const closeModal = () => {
-  clearForm();
-  isModalShow.value = false;
 };
 </script>
