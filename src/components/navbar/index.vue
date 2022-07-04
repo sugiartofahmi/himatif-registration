@@ -1,18 +1,16 @@
 <template>
-  <nav class="bg-[#051367] py-6 font-freakeOne">
+  <nav class="text-white py-6 font-freakeOne bg-[#051367]">
     <div
       class="container flex flex-wrap justify-between items-center mx-auto md:px-0 px-5"
     >
       <a class="flex items-center">
-        <span class="self-center text-xl whitespace-nowrap dark:text-white"
-          >HIMATIF</span
-        >
+        <span class="self-center text-xl whitespace-nowrap">HIMATIF</span>
       </a>
       <div class="flex items-center md:order-2">
         <router-link to="/login">
           <button
             type="button"
-            class="hidden md:flex px-8 py-2 border-2 border-white text-white font-medium text-base leading-tight uppercase rounded-full"
+            class="hidden md:flex px-8 py-2 border-2 border-white font-medium text-base leading-tight uppercase rounded-full"
           >
             LOGIN
           </button>
@@ -49,22 +47,22 @@
       </div>
 
       <div
-        class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+        class="hidden text-white file:placeholder:justify-between items-center w-full md:flex md:w-auto md:order-1"
       >
         <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0">
           <li>
             <router-link to="/">
-              <a href=" #" class="text-base text-white">BERANDA</a>
+              <a href=" #" class="text-base">BERANDA</a>
             </router-link>
           </li>
           <li>
             <router-link to="/pengurus">
-              <a href="#" class="text-base text-white">PENGURUS</a>
+              <a href="#" class="text-base">PENGURUS</a>
             </router-link>
           </li>
           <li>
             <router-link to="/dokumentasi">
-              <a href="#" class="text-base text-white">DOKUMENTAS</a>
+              <a href="#" class="text-base">DOKUMENTASI</a>
             </router-link>
           </li>
         </ul>

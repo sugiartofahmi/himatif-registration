@@ -23,6 +23,13 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
+        <button
+          type="button"
+          teleport="#registration"
+          class="px-8 py-2 bg-[#051367] border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded-full"
+        >
+          Info Registration
+        </button>
       </div>
       <div class="object-scale-down md:h-80 md:w-80 h-40 w-40">
         <img
@@ -35,10 +42,11 @@
   </section>
 
   <section
+    id="registration"
     class="text-white font-freakeOne flex items-center text-center content-center bg-[#051367]"
   >
-    <div class="container px-5 py-24 mx-auto">
-      <div class="w-full mx-auto text-center md:h-screen">
+    <div class="container px-5 mx-auto">
+      <div class="w-full mx-auto text-center pt-60 mb-10 h-screen">
         <h1 class="md:text-5xl text-2xl mb-5">OPEN REGISTRATION</h1>
         <h1 class="md:text-5xl text-2xl mb-10">
           KEPENGURUSAN HIMATIF PERIODE 2022 - 2023
