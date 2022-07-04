@@ -7,11 +7,7 @@
       >
         <div class="max-w-sm rounded-lg border bg-gray-800 border-gray-700">
           <div>
-            <img
-              class="rounded-t-lg"
-              src="/docs/images/blog/image-1.jpg"
-              alt=""
-            />
+            <img class="rounded-t-lg" src="/src/assets/home.png" alt="" />
           </div>
           <div class="p-5">
             <a href="#">

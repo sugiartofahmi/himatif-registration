@@ -25,7 +25,7 @@
         </p>
         <button
           type="button"
-          teleport="#registration"
+          href="#registration"
           class="px-8 py-2 bg-[#051367] border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded-full"
         >
           Info Registration

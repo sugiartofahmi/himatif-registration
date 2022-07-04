@@ -79,12 +79,13 @@ const submit = async () => {
     const { data, error } = await supabase
       .from("user")
       .select("*")
-      .eq("nim", login.nim);
+      .eq("nim", login.nim)
+      .eq("password", login.password);
     users.value = data;
     console.log(users.value[0].role);
     if (users.value[0].role !== "user") {
       router.push("/admin/user");
-    } else if (users.value[0]?.role === "user") {
+    } else if (users.value[0].role === "user") {
       router.push("/user/dataDiri/" + users.value[0].id);
     } else {
       Swal.fire("Pemberitahuan", "Data Tidak Ditemukan", "warning");

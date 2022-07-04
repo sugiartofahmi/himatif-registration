@@ -10,27 +10,25 @@
                 <thead class="uppercase bg-[#2D31FA]">
                   <tr>
                     <th scope="col" class="px-6 py-3">NO.</th>
-                    <th scope="col" class="px-6 py-3">DIVISI</th>
-                    <th scope="col" class="px-6 py-3">WAKTU DAN TANGGAL</th>
-                    <th scope="col" class="px-6 py-3">AKSI</th>
+                    <th scope="col" class="px-6 py-3">Nama Berkas</th>
+                    <th scope="col" class="px-6 py-3">Aksi</th>
                   </tr>
                 </thead>
-                <tbody class="text-black bg-white">
+                <tbody
+                  v-for="(data, index) in dokumentasi"
+                  :key="dokumentasi.id"
+                  class="text-black bg-white"
+                >
                   <tr class="bg-white border-b dark:border-gray-700">
-                    <td class="px-6 py-4">1</td>
-                    <td class="px-6 py-4">gg</td>
-                    <td class="px-6 py-4">hh</td>
+                    <td class="px-6 py-4">{{ index + 1 }}</td>
+                    <td class="px-6 py-4">{{ data.namaBerkas }}</td>
                     <td class="px-6 py-4 mr-5">
                       <a
-                        href="#"
+                        :href="data.link"
+                        target="_blank"
                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >Edit
+                        >Unduh
                       </a>
-                      <a
-                        href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >Delete</a
-                      >
                     </td>
                   </tr>
                 </tbody>
@@ -42,3 +40,18 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import { supabase } from "../../supabase";
+//get all data
+const dokumentasi = ref({});
+const getDokumentasi = async () => {
+  const { data, error } = await supabase.from("dokumentasi").select("*");
+  dokumentasi.value = data;
+};
+
+onMounted(() => {
+  getDokumentasi();
+});
+</script>
