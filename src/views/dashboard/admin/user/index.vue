@@ -130,7 +130,6 @@
 import { supabase } from "../../../../supabase";
 import { ref, onMounted } from "vue";
 import Swal from "sweetalert2";
-import Modal from "../../../../components/Modal/index.vue";
 
 //show modal
 const isModalShow = ref(false);

@@ -7,6 +7,7 @@
       @submit="updateData(idUser)"
       title="Updata Data"
       cancel-text="Batal"
+      submit-text="Simpan"
     >
       <form @submit.prevent="updateData(idUser)" class="w-full mr-40">
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -182,7 +183,7 @@
 <script setup>
 import { supabase } from "../../../../supabase";
 import { ref, onMounted } from "vue";
-import Modal from "../../../../components/Modal/index.vue";
+
 import Swal from "sweetalert2";
 
 //show modal
