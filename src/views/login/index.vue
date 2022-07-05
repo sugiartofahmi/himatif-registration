@@ -82,7 +82,6 @@ const submit = async () => {
       .eq("nim", login.nim)
       .eq("password", login.password);
     users.value = data;
-    console.log(users.value[0].role);
     if (users.value[0].role !== "user") {
       router.push("/admin/user");
     } else if (users.value[0].role === "user") {

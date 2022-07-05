@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <section class="text-white h-full md:h-screen bg-[#051367]">
+  <section class="text-white h-full md:h-screen pt-20 md:pt-0 bg-[#051367]">
     <div class="container h-full mx-auto flex md:flex-row flex-col pt-20">
       <div class="lg:flex-grow flex flex-col items-center text-center">
         <div class="w-full h-screen text-white">

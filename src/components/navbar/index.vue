@@ -18,7 +18,7 @@
 
         <ul
           v-if="isDropdown"
-          class="flex transition-all ease-linear bg-[#051367] px-4 py-2 rounded-lg flex-col justify-start fixed right-3 md:hidden space-y-4 cursor-pointer top-16"
+          class="flex absolute transition-all ease-linear bg-[#051367] px-4 py-2 rounded-lg flex-col justify-start right-3 md:hidden space-y-4 cursor-pointer top-16"
         >
           <router-link to="/">
             <li class="text-white text-[16px]">BERANDA</li>
