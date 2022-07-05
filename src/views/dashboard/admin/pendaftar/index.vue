@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-[#051367]">
+  <div class="flex h-full bg-[#051367]">
     <SidebarAdmin />
     <Modal
       v-if="isModalShow"
@@ -126,7 +126,7 @@
       </form>
     </Modal>
     <!-- Content -->
-    <div class="w-full h-screen text-white">
+    <div class="w-full h-full text-white">
       <div class="flex items-center justify-center p-40">
         <div class="relative ml-40 overflow-x-auto shadow-md sm:rounded-lg">
           <table class="w-full text-lg text-left">
