@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <section
-    class="text-white h-full md:h-screen bg-home bg-cover bg-center bg-[#051367]"
+    class="text-white h-full md:h-screen w-full bg-home bg-cover bg-center backdrop-blur-xl"
   >
     <div
       class="container h-full mx-auto flex py-24 md:flex-row flex-col items-center"
@@ -14,7 +14,7 @@
         >
           HIMATIF <br />HIMPUNAN MAHASISWA TEKNIK INFORMATIKA
         </h1>
-        <p class="mb-8 md:px-0 px-10 leading-relaxed">
+        <p class="mb-8 md:px-0 px-10 text-xl leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -25,10 +25,9 @@
         </p>
         <button
           type="button"
-          href="#registration"
-          class="px-8 py-2 bg-[#051367] border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded-full"
+          class="px-8 py-2 bg-[#051367] border-2 border-white text-white font-medium text-xm leading-tight uppercase rounded-full"
         >
-          Info Registration
+          <a href="#registration"> Info Registration </a>
         </button>
       </div>
       <div class="object-scale-down md:h-80 md:w-80 h-40 w-40">
@@ -42,10 +41,9 @@
   </section>
 
   <section
-    id="registration"
     class="text-white font-freakeOne flex items-center text-center content-center bg-[#051367]"
   >
-    <div class="container px-5 mx-auto">
+    <div id="registration" class="container px-5 mx-auto">
       <div class="w-full mx-auto text-center pt-60 mb-10 h-screen">
         <h1 class="md:text-5xl text-2xl mb-5">OPEN REGISTRATION</h1>
         <h1 class="md:text-5xl text-2xl mb-10">

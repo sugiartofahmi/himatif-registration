@@ -1,19 +1,19 @@
 <template>
   <Navbar />
-  <section class="text-white h-full bg-[#051367]">
+  <section class="text-white h-full md:h-auto w-auto bg-[#051367]">
     <div class="container mx-auto flex pt-20">
       <div
-        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+        class="ml-20 pl-10 mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
       >
         <div
           v-for="(data, index) in pengurus"
           :key="pengurus.id"
-          class="max-w-sm rounded-lg border bg-gray-800 border-gray-700"
+          class="w-auto rounded-lg border bg-gray-800 border-gray-700"
         >
           <div class="flex justify-center items-center">
-            <img class="" src="/src/assets/avatar.png" alt="" />
+            <img width="250" class="pt-5" src="/src/assets/avatar.png" alt="" />
           </div>
-          <div class="p-5 text-center items-center">
+          <div class="pt-5 text-center items-center">
             <h5
               class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
