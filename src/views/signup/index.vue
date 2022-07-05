@@ -134,6 +134,7 @@
 import { supabase } from "../../supabase";
 import Swal from "sweetalert2";
 import { reactive } from "vue";
+import { router } from "../../router";
 
 const signUp = reactive({
   nama: "",
@@ -172,7 +173,7 @@ const submitData = async () => {
     clearForm();
     router.push("/login");
     if (error) throw error;
-    Swal.fire("Terimakasih", "Terimakasih atas Partisipasi nya", "success");
+    Swal.fire("Success", "Terimakasih atas Partisipasi nya", "success");
   } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");

@@ -128,7 +128,7 @@
     <!-- Content -->
     <div class="w-full h-screen text-white">
       <div class="flex items-center justify-center p-40">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="relative ml-40 overflow-x-auto shadow-md sm:rounded-lg">
           <table class="w-full text-lg text-left">
             <thead class="uppercase bg-[#2D31FA]">
               <tr>
