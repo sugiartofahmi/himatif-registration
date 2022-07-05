@@ -44,12 +44,37 @@
     class="text-white font-freakeOne flex items-center text-center content-center bg-[#051367]"
   >
     <div id="registration" class="container px-5 mx-auto">
-      <div class="w-full mx-auto text-center pt-60 mb-10 h-screen">
+      <div class="w-full mx-auto text-center pt-40 h-screen">
         <h1 class="md:text-5xl text-2xl mb-5">OPEN REGISTRATION</h1>
         <h1 class="md:text-5xl text-2xl mb-10">
           KEPENGURUSAN HIMATIF PERIODE 2022 - 2023
         </h1>
-        <h1 class="md:text-8xl text-5xl">23 : 59 : 59</h1>
+
+        <div
+          class="md:text-7xl text-5xl text-center flex w-full items-center justify-center"
+        >
+          <div class="w-30 mx-4 p-4 bg-[#2D31FA] text-white rounded-lg">
+            <div class="leading-none" x-text="days">{{ hari }}</div>
+            <div class="uppercase text-lg leading-none">Hari</div>
+          </div>
+          <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
+            <div class="leading-none" x-text="hours">{{ jam }}</div>
+            <div class="uppercase text-lg leading-none">Jam</div>
+          </div>
+          <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
+            <div class="leading-none" x-text="minutes">
+              {{ menit }}
+            </div>
+            <div class="uppercase text-lg leading-none">Minutes</div>
+          </div>
+          <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
+            <div class="leading-none" x-text="seconds">
+              {{ detik }}
+            </div>
+            <div class="uppercase text-lg leading-none">Detik</div>
+          </div>
+        </div>
+
         <router-link to="/signup">
           <button
             type="submit"
@@ -63,3 +88,28 @@
   </section>
   <Footer />
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+const countDown = new Date("July 20, 2022 11:10:00").getTime();
+const hari = ref();
+const jam = ref();
+const menit = ref();
+const detik = ref();
+
+const count = () => {
+  const now = new Date().getTime();
+  const distance = countDown - now;
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  hari.value = days;
+  jam.value = hours;
+  menit.value = minutes;
+  detik.value = seconds;
+};
+setInterval(count, 1000);
+</script>
