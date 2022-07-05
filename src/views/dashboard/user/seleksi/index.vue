@@ -12,27 +12,22 @@
               <tr>
                 <th scope="col" class="px-6 py-3">NO.</th>
                 <th scope="col" class="px-6 py-3">DIVISI</th>
-                <th scope="col" class="px-6 py-3">WAKTU DAN TANGGAL</th>
-                <th scope="col" class="px-6 py-3">AKSI</th>
+                <th scope="col" class="px-6 py-3">Tanggal Daftar</th>
+                <th scope="col" class="px-6 py-3">Tanggal Wawancara</th>
+                <th scope="col" class="px-6 py-3">Status</th>
               </tr>
             </thead>
-            <tbody class="text-black bg-white">
+            <tbody
+              v-for="(user, index) in users"
+              :key="users.id"
+              class="text-black bg-white"
+            >
               <tr class="bg-white border-b dark:border-gray-700">
-                <td class="px-6 py-4">1</td>
-                <td class="px-6 py-4">gg</td>
-                <td class="px-6 py-4">hh</td>
-                <td class="px-6 py-4 mr-5">
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                    >Edit
-                  </a>
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                    >Delete</a
-                  >
-                </td>
+                <td class="px-6 py-4">{{ index + 1 }}</td>
+                <td class="px-6 py-4">{{ user.divisi }}</td>
+                <td class="px-6 py-4">{{ user.tanggalDaftar }}</td>
+                <td class="px-6 py-4">{{ user.wawancara.tanggalWawancara }}</td>
+                <td class="px-6 py-4">{{ user.status }}</td>
               </tr>
             </tbody>
           </table>
@@ -50,9 +45,13 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const id = route.params.id;
 const users = ref({});
+const wawancara = ref({});
 
 const getUsers = async () => {
-  const { data, error } = await supabase.from("user").select("id", id);
+  const { data } = await supabase
+    .from("user")
+    .select("*, wawancara:divisi(*)")
+    .eq("id", id);
   users.value = data;
 };
 

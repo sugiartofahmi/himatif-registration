@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col text-white w-64 h-screen px-4 py-8 overflow-y-auto bg-[#2D31FA] rounded-r-3xl"
+    class="flex fixed flex-col text-white w-64 h-screen px-4 py-8 overflow-y-auto bg-[#2D31FA] rounded-r-3xl"
   >
     <div class="flex gap-3 justify-center items-center">
       <img width="50" src="../../../assets/Logo-himatif.png" alt="logo" />

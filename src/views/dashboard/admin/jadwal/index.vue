@@ -76,14 +76,16 @@
               <tr class="bg-white border-b dark:border-gray-700">
                 <td class="px-6 py-4">{{ index + 1 }}</td>
                 <td class="px-6 py-4">{{ data.divisi }}</td>
-                <td class="px-6 py-4">{{ data.tanggalWaktu }}</td>
+                <td class="px-6 py-4">{{ data.tanggalWawancara }}</td>
                 <td class="px-6 py-4 mr-5">
                   <a
+                    @click="edit(data.id)"
                     href="#"
                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >Edit
                   </a>
                   <a
+                    @click="deleteWawancara(data.id)"
                     href="#"
                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >Delete</a
@@ -106,7 +108,7 @@ import Swal from "sweetalert2";
 
 const wawancara = ref({});
 const divisi = ref("");
-const tanggalWaktu = ref("");
+const tanggalWawancara = ref("");
 
 //show modal
 const isModalShow = ref(false);
@@ -120,7 +122,7 @@ const closeModal = () => {
 
 const clearForm = () => {
   divisi.value = "";
-  tanggalWaktu.value = "";
+  tanggalWawancara.value = "";
 };
 
 const getWawancara = async () => {
@@ -133,17 +135,55 @@ const addData = async () => {
     const { error } = await supabase.from("wawancara").insert([
       {
         divisi: divisi.value,
-        tanggalWaktu: tanggalWaktu.value,
+        tanggalWawancara: tanggalWawancara.value,
       },
     ]);
     clearForm();
     getWawancara();
+    closeModal();
     if (error) throw error;
-    Swal.fire("Terimakasih", "Terimakasih atas Partisipasi nya", "success");
+    Swal.fire("Success", "Data Berhasil Ditambahkan", "success");
   } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
   }
+};
+
+//delete user
+const deleteWawancara = async (id) => {
+  try {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        const { error } = await supabase
+          .from("wawancara")
+          .delete()
+          .eq("id", id);
+        getWawancara();
+        clearForm();
+        if (error) throw error;
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    Swal.fire("Error :(", `${error.message}`, "error");
+  }
+};
+
+const edit = async (id) => {
+  const { data } = await supabase.from("wawancara").select("*").eq("id", id);
+
+  divisi.value = data[0].divisi;
+  tanggalWawancara.value = data[0].tanggalWawancara;
+  showModal();
 };
 
 onMounted(() => {

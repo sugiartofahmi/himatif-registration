@@ -28,7 +28,8 @@
                               Nama
                             </label>
                             <input
-                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
+                              v-model="nama"
+                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3"
                               id="fullName"
                               type="text"
                               placeholder="Masukkan Nama Anda"
@@ -39,7 +40,8 @@
                               Jenis Kelamin
                             </label>
                             <input
-                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
+                              v-model="jenisKelamin"
+                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3"
                               type="text"
                               placeholder="Masukan Jenis Kelamin"
                             />
@@ -51,7 +53,8 @@
                               Kelas
                             </label>
                             <input
-                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
+                              v-model="kelas"
+                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3"
                               type="text"
                               placeholder="Masukkan Kelas"
                             />
@@ -59,7 +62,8 @@
                           <div class="w-1/2 px-3">
                             <label class="text-white" for="email"> NIM </label>
                             <input
-                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
+                              v-model="nim"
+                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3"
                               type="number"
                               placeholder="Masukkan NIM"
                             />
@@ -72,7 +76,8 @@
                               Divisi
                             </label>
                             <input
-                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
+                              v-model="divisi"
+                              class="mt-1 focus:outline-none rounded-full border border-white w-full bg-transparent text-white py-2 px-4 mb-3"
                               type="text"
                               placeholder="Masukkan Nama Divisi"
                             />
@@ -82,7 +87,8 @@
                               Alasan Memilih Divisi
                             </label>
                             <textarea
-                              class="mt-1 focus:outline-none rounded border border-white w-full bg-transparent text-white py-2 px-4 mb-3 focus:bg-white focus:text-[#2D31FA]"
+                              v-model="alasan"
+                              class="mt-1 focus:outline-none rounded border border-white w-full bg-transparent text-white py-2 px-4 mb-3"
                               rows="3"
                               placeholder="Masukan Alasan"
                             ></textarea>
@@ -107,12 +113,25 @@ import { ref, onMounted } from "vue";
 const route = useRoute();
 const id = route.params.id;
 const users = ref([]);
+//define
+const idUser = ref("");
+const nama = ref("");
+const nim = ref("");
+const jenisKelamin = ref("");
+const kelas = ref("");
+const divisi = ref("");
+const alasan = ref("");
 
 const getUsers = async () => {
   const { data } = await supabase.from("user").select("*").eq("id", id);
   users.value = data;
-  console.log(id);
-  console.log(users.value);
+  idUser.value = data[0].id;
+  nama.value = data[0].nama;
+  nim.value = data[0].nim;
+  jenisKelamin.value = data[0].jenisKelamin;
+  kelas.value = data[0].kelas;
+  divisi.value = data[0].divisi;
+  alasan.value = data[0].alasan;
 };
 
 onMounted(() => {
