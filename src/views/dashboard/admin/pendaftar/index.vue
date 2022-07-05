@@ -126,7 +126,7 @@
       </form>
     </Modal>
     <!-- Content -->
-    <div class="w-full h-full text-white">
+    <div class="w-auto h-screen text-white">
       <div class="flex items-center justify-center p-40">
         <div class="relative ml-40 overflow-x-auto shadow-md sm:rounded-lg">
           <table class="w-full text-lg text-left">

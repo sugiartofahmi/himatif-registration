@@ -65,7 +65,7 @@
             <div class="leading-none" x-text="minutes">
               {{ menit }}
             </div>
-            <div class="uppercase text-lg leading-none">Minutes</div>
+            <div class="uppercase text-lg leading-none">Menit</div>
           </div>
           <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
             <div class="leading-none" x-text="seconds">
