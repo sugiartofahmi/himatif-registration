@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <section
-    class="text-white h-full md:h-screen w-full bg-home bg-cover bg-center bg-[#051367]"
+    class="bg-[#051367] text-white h-full md:h-screen w-full bg-home bg-cover bg-center"
   >
     <div
       class="container h-full mx-auto flex py-24 md:flex-row flex-col items-center"
