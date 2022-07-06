@@ -77,7 +77,7 @@
       </form>
     </Modal>
     <!-- Content -->
-    <div class="w-auto h-screen text-white">
+    <div class="w-screen h-screen text-white">
       <div class="flex items-center justify-center p-40">
         <div
           class="relative ml-40 justify-center overflow-x-auto shadow-md sm:rounded-lg"
@@ -90,7 +90,7 @@
                 <th scope="col" class="px-6 py-3">username</th>
                 <th scope="col" class="px-6 py-3">password</th>
                 <th scope="col" class="px-6 py-3">role</th>
-                <th scope="col" class="px-6 py-3">Action</th>
+                <th scope="col" class="px-6 py-3">Aksi</th>
               </tr>
             </thead>
             <tbody

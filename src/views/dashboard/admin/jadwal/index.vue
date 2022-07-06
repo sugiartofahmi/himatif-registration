@@ -46,7 +46,7 @@
       </form>
     </Modal>
     <!-- Content -->
-    <div class="w-full h-screen text-white">
+    <div class="w-full ml-40 h-screen text-white">
       <div class="flex items-center justify-center p-40">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
           <div class="flex justify-between mb-10">

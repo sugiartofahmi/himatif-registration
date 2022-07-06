@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="pl-20 h-full font-freakeOne gradient-form bg-[#051367] md:h-screen"
-  >
+  <section class="pl-0 md:pl-20 h-full md:h-screen font-freakeOne bg-[#051367]">
     <div class="container py-12 px-6 h-full">
       <div
         class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800"
@@ -12,13 +10,15 @@
               <div class="lg:w-2/3 px-4 md:px-0">
                 <div class="md:p-12 md:mx-6">
                   <div class="flex items-center gap-5">
-                    <h4 class="text-xl w-1/2 text-white font-freakeOne mb-8">
+                    <h4
+                      class="text-xl md:w-1/2 w-full md:px-0 px-10 md:pt-0 pt-8 text-center md:text-left text-white font-freakeOne mb-8"
+                    >
                       Registrasi Calon Pengurus HIMATIF Periode 20xx - 20xx
                     </h4>
                   </div>
                   <form>
-                    <div class="flex">
-                      <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="flex md:flex-row flex-col">
+                      <div class="md:w-1/2 w-full px-3 mb-6 md:mb-0">
                         <label class="text-white" for="fullName"> Nama </label>
                         <input
                           v-model="signUp.nama"
@@ -28,7 +28,7 @@
                           placeholder="Masukkan Nama Anda"
                         />
                       </div>
-                      <div class="w-1/2 px-3">
+                      <div class="md:w-1/2 w-full px-3">
                         <label class="text-white" for="email">
                           Jenis Kelamin
                         </label>
@@ -40,8 +40,8 @@
                         />
                       </div>
                     </div>
-                    <div class="flex">
-                      <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="flex md:flex-row flex-col">
+                      <div class="md:w-1/2 w-full px-3 mb-6 md:mb-0">
                         <label class="text-white" for="fullName"> Kelas </label>
                         <input
                           v-model="signUp.kelas"
@@ -50,7 +50,7 @@
                           placeholder="Masukkan Kelas"
                         />
                       </div>
-                      <div class="w-1/2 px-3">
+                      <div class="md:w-1/2 w-full px-3">
                         <label class="text-white" for="email"> NIM </label>
                         <input
                           v-model="signUp.nim"
@@ -60,8 +60,8 @@
                         />
                       </div>
                     </div>
-                    <div class="flex">
-                      <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="flex md:flex-row flex-col">
+                      <div class="md:w-1/2 w-full px-3 mb-6 md:mb-0">
                         <label class="text-white" for="fullName">
                           Password
                         </label>
@@ -72,7 +72,7 @@
                           placeholder="Masukkan Password"
                         />
                       </div>
-                      <div class="w-1/2 px-3">
+                      <div class="md:w-1/2 w-full px-3">
                         <label class="text-white" for="email"> Password </label>
                         <input
                           v-model="signUp.validPassword"
@@ -82,8 +82,8 @@
                         />
                       </div>
                     </div>
-                    <div class="flex">
-                      <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="flex md:flex-row flex-col">
+                      <div class="md:w-1/2 w-full px-3 mb-6 md:mb-0">
                         <label class="text-white" for="fullName">
                           Divisi
                         </label>
@@ -94,7 +94,7 @@
                           placeholder="Masukkan Nama Divisi"
                         />
                       </div>
-                      <div class="w-1/2 px-3">
+                      <div class="md:w-1/2 w-full px-3">
                         <label class="text-white" for="email">
                           Alasan Memilih Divisi
                         </label>
@@ -109,8 +109,10 @@
                   </form>
                 </div>
               </div>
-              <div class="lg:w-1/3 flex items-center">
-                <div class="px-4 md:p-12 md:mx-6">
+              <div
+                class="lg:w-1/3 flex items-center md:justify-start justify-center"
+              >
+                <div class="flex justify-center items-center">
                   <div class="text-center pt-1 mb-12 pb-1">
                     <button
                       @click="submitData()"
@@ -173,7 +175,6 @@ const submitData = async () => {
     clearForm();
     router.push("/login");
     if (error) throw error;
-    Swal.fire("Success", "Terimakasih atas Partisipasi nya", "success");
   } catch (error) {
     console.log(error);
     Swal.fire("Error :(", `${error.message}`, "error");
