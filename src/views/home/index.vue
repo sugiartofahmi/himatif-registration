@@ -53,25 +53,25 @@
         <div
           class="text-center md:text-7xl text-3xl flex w-full items-center justify-center"
         >
-          <div class="w-30 mx-4 p-4 bg-[#2D31FA] text-white rounded-lg">
+          <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] text-white rounded-lg">
             <div class="leading-none">{{ hari }}</div>
-            <div class="uppercase md:text-3xl text-xl leading-none">Hari</div>
+            <div class="uppercase md:text-3xl text-lg leading-none">Hari</div>
           </div>
-          <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
+          <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] rounded-lg">
             <div class="leading-none">{{ jam }}</div>
-            <div class="uppercase md:text-3xl text-xl leading-none">Jam</div>
+            <div class="uppercase md:text-3xl text-lg leading-none">Jam</div>
           </div>
-          <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
+          <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] rounded-lg">
             <div class="leading-none">
               {{ menit }}
             </div>
-            <div class="uppercase md:text-3xl text-xl leading-none">Menit</div>
+            <div class="uppercase md:text-3xl text-lg leading-none">Menit</div>
           </div>
-          <div class="w-30 mx-4 p-4 bg-[#2D31FA] rounded-lg">
+          <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] rounded-lg">
             <div class="leading-none">
               {{ detik }}
             </div>
-            <div class="uppercase md:text-3xl text-xl leading-none">Detik</div>
+            <div class="uppercase md:text-3xl text-lg leading-none">Detik</div>
           </div>
         </div>
 
