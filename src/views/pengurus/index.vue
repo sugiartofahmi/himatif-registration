@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <section class="text-white h-full md:h-auto w-auto bg-[#051367]">
-    <div class="container mx-auto flex pt-20">
+    <div class="container md:mx-auto flex pt-20">
       <div
         class="ml-10 mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
       >

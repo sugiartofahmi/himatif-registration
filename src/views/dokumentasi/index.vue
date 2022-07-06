@@ -1,12 +1,14 @@
 <template>
   <Navbar />
   <section class="text-white h-full md:h-screen pt-20 md:pt-0 bg-[#051367]">
-    <div class="container h-full mx-auto flex md:flex-row flex-col pt-20">
+    <div
+      class="container h-full md:mx-auto px-5 flex md:flex-row flex-col pt-20"
+    >
       <div class="lg:flex-grow flex flex-col items-center text-center">
         <div class="w-full h-screen text-white">
           <div class="flex items-center justify-center">
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-              <table class="w-full text-lg text-left">
+              <table class="w-full md:text-lg text-sm text-left">
                 <thead class="uppercase bg-[#2D31FA]">
                   <tr>
                     <th scope="col" class="px-6 py-3">NO.</th>
