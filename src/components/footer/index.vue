@@ -6,7 +6,7 @@
       >
         <div class="">
           <h6
-            class="text-3xl font-freakeOne uppercase mb-4 flex items-center justify-center md:justify-start"
+            class="md:text-3xl text-xl font-freakeOne uppercase mb-4 flex items-center justify-center md:justify-start"
           >
             <img
               class="mr-5"
@@ -16,7 +16,7 @@
             />
             HIMATIF
           </h6>
-          <p class="text-lg md:w-1/2 w-full">
+          <p class="md:text-lg text-sm md:w-1/2 w-full">
             Jl. Soekarno-Hatta No.530, Sekejati, Kec. Buahbatu, Kota Bandung,
             Jawa Barat 40286
           </p>
@@ -24,23 +24,23 @@
 
         <div class="">
           <h6
-            class="text-3xl font-freakeOne mb-4 flex justify-center md:justify-start"
+            class="md:text-3xl text-xl font-freakeOne mb-4 flex justify-center md:justify-start"
           >
             OUR SOCIAL MEDIA
           </h6>
-          <p class="mb-4 text-lg">
+          <p class="mb-4 md:text-lg text-sm">
             <a>Email : himatifuninus@gmail.com</a>
           </p>
-          <p class="mb-4 text-lg">
+          <p class="mb-4 md:text-lg text-sm">
             <a>Youtube : HIMATIF UNINUS</a>
           </p>
-          <p class="mb-4 text-lg">
+          <p class="mb-4 md:text-lg text-sm">
             <a>Instagram : @himatifuninus</a>
           </p>
         </div>
       </div>
     </div>
-    <div class="text-lg text-center md:text-left pb-6 md:mx-20 mx-5">
+    <div class="md:text-lg text-sm text-center md:text-left pb-6 md:mx-20 mx-5">
       <span>© 2022 - 2023 HIMPUNAN MAHASISWA TEKNIK INFORMATIKA UNINUS</span>
     </div>
   </footer>
