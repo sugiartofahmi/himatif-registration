@@ -15,13 +15,7 @@
           HIMATIF <br />HIMPUNAN MAHASISWA TEKNIK INFORMATIKA
         </h1>
         <p class="mb-8 md:px-0 px-10 text-xl leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          memiliki tujuan selain sebagai wadah aspirasi dan partisipasi mahasiswa jurusan Teknik Informatika, juga sebagai sarana untuk pengembangan potensi dan pemberdayaan mahasiswa Teknik Informatika yang profesional menuju terbentuknya mahasiswa yang berwawasan luas, aktif, kreatif, komunikatif dan inovatif terhadap berbagai persoalan perkembangan pengetahuan secara global untuk mewujudkan sistem tatanan yang dinamis
         </p>
         <button
           type="button"
