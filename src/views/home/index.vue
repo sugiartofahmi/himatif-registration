@@ -15,7 +15,7 @@
           HIMATIF <br />HIMPUNAN MAHASISWA TEKNIK INFORMATIKA
         </h1>
         <p class="mb-8 md:px-0 px-10 text-xl leading-relaxed">
-          memiliki tujuan selain sebagai wadah aspirasi dan partisipasi mahasiswa jurusan Teknik Informatika, juga sebagai sarana untuk pengembangan potensi dan pemberdayaan mahasiswa Teknik Informatika yang profesional menuju terbentuknya mahasiswa yang berwawasan luas, aktif, kreatif, komunikatif dan inovatif terhadap berbagai persoalan perkembangan pengetahuan secara global untuk mewujudkan sistem tatanan yang dinamis
+          Memiliki tujuan selain sebagai wadah aspirasi dan partisipasi mahasiswa jurusan Teknik Informatika, juga sebagai sarana untuk pengembangan potensi dan pemberdayaan mahasiswa Teknik Informatika yang profesional menuju terbentuknya mahasiswa yang berwawasan luas, aktif, kreatif, komunikatif dan inovatif terhadap berbagai persoalan perkembangan pengetahuan secara global untuk mewujudkan sistem tatanan yang dinamis.
         </p>
         <button
           type="button"
