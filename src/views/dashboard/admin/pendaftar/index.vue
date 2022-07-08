@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full bg-[#051367]">
+  <div class="flex h-screen bg-[#051367]">
     <SidebarAdmin />
     <Modal
       v-if="isModalShow"
