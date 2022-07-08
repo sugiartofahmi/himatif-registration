@@ -21,7 +21,7 @@
           type="button"
           class="px-8 py-2 bg-[#051367] border-2 border-white text-white font-medium text-xm leading-tight uppercase rounded-full"
         >
-          <a href="#registration"> Info Registrasi </a>
+          <a href="#registration"> Info Registrasi</a>
         </button>
       </div>
       <div class="object-scale-down md:h-80 md:w-80 h-40 w-40">
