@@ -1,3 +1,3 @@
 # Vue 3 + TypeScript + Vite
 
-![This is an image](./Capture.PNG.png)
+![This is an image](./Capture.PNG)
