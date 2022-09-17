@@ -15,7 +15,13 @@
           HIMATIF <br />HIMPUNAN MAHASISWA TEKNIK INFORMATIKA
         </h1>
         <p class="mb-8 md:px-0 px-10 text-xl leading-relaxed">
-          Memiliki tujuan selain sebagai wadah aspirasi dan partisipasi mahasiswa jurusan Teknik Informatika, juga sebagai sarana untuk pengembangan potensi dan pemberdayaan mahasiswa Teknik Informatika yang profesional menuju terbentuknya mahasiswa yang berwawasan luas, aktif, kreatif, komunikatif dan inovatif terhadap berbagai persoalan perkembangan pengetahuan secara global untuk mewujudkan sistem tatanan yang dinamis.
+          Memiliki tujuan selain sebagai wadah aspirasi dan partisipasi
+          mahasiswa jurusan Teknik Informatika, juga sebagai sarana untuk
+          pengembangan potensi dan pemberdayaan mahasiswa Teknik Informatika
+          yang profesional menuju terbentuknya mahasiswa yang berwawasan luas,
+          aktif, kreatif, komunikatif dan inovatif terhadap berbagai persoalan
+          perkembangan pengetahuan secara global untuk mewujudkan sistem tatanan
+          yang dinamis.
         </p>
         <button
           type="button"
@@ -48,23 +54,19 @@
           class="text-center md:text-7xl text-3xl flex w-full items-center justify-center"
         >
           <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] text-white rounded-lg">
-            <div class="leading-none">{{ hari }}</div>
+            <div class="leading-none">0</div>
             <div class="uppercase md:text-3xl text-lg leading-none">Hari</div>
           </div>
           <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] rounded-lg">
-            <div class="leading-none">{{ jam }}</div>
+            <div class="leading-none">0</div>
             <div class="uppercase md:text-3xl text-lg leading-none">Jam</div>
           </div>
           <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] rounded-lg">
-            <div class="leading-none">
-              {{ menit }}
-            </div>
+            <div class="leading-none">0</div>
             <div class="uppercase md:text-3xl text-lg leading-none">Menit</div>
           </div>
           <div class="w-30 md:mx-4 mx-1 p-4 bg-[#2D31FA] rounded-lg">
-            <div class="leading-none">
-              {{ detik }}
-            </div>
+            <div class="leading-none">0</div>
             <div class="uppercase md:text-3xl text-lg leading-none">Detik</div>
           </div>
         </div>
@@ -82,28 +84,3 @@
   </section>
   <Footer />
 </template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-const countDown = new Date("July 20, 2022 11:10:00").getTime();
-const hari = ref();
-const jam = ref();
-const menit = ref();
-const detik = ref();
-
-const count = () => {
-  const now = new Date().getTime();
-  const distance = countDown - now;
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  hari.value = days;
-  jam.value = hours;
-  menit.value = minutes;
-  detik.value = seconds;
-};
-setInterval(count, 1000);
-</script>
